@@ -1,0 +1,39 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    text-align: center;
+}
+
+#usMap {
+    margin-top: 20px;
+    
+}
+
+.state {
+    fill: lightgray;
+    stroke: black;
+    cursor: pointer;
+    transition: fill 0.3s;
+    pointer-events: all; /* Ensure the state is clickable */
+}
+
+.state.democrat {
+    fill: blue;
+}
+
+.state.republican {
+    fill: red;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+svg, path {
+    pointer-events: auto; /* Ensure it can receive click events */
+}
