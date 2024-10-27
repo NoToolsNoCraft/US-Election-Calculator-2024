@@ -1,0 +1,163 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    text-align: center;
+    background-color: rgb(192, 247, 247);
+}
+
+h1 {
+    font-size: 58px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    background: linear-gradient(to right, red, white, blue); /* Gradient background */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent */
+    margin: 20px 0; /* Add some margin for spacing */
+    padding: 10px; /* Add padding for aesthetics */
+    -webkit-text-stroke: 1.5px black; /* Thin black outline */
+}
+
+.map-container {
+    display: flex;
+    justify-content: center; /* Center the SVG horizontally */
+    margin-top: 20px;
+}
+
+#usMap {
+    width: 60vw; /* Set to 60% of the viewport width for a manageable size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.state {
+    fill: lightgray;
+    stroke: black;
+    cursor: pointer;
+    transition: fill 0.3s;
+    pointer-events: all; /* Ensure the state is clickable */
+}
+
+.state.democrat {
+    fill: blue;
+}
+
+.state.republican {
+    fill: red;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+svg, path {
+    pointer-events: auto; /* Ensure it can receive click events */
+}
+
+/* CSS for Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    top: 0; /* Stay at the top */
+    left: 0; /* Stay at the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+    z-index: 1000; /* High z-index to cover other content */
+}
+
+.modal-content {
+    background-color: white; /* White background */
+    margin: 15% auto; /* Center the modal */
+    padding: 20px; /* Padding inside the modal */
+    border: 1px solid #888; /* Border color */
+    width: 80%; /* Width of the modal */
+    max-width: 400px; /* Max width */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative for absolute positioning of the close button */
+}
+
+/* Styles for the close button */
+.close {
+    font-size: 24px; /* Size of the "X" */
+    background-color: red; /* Red background */
+    color: white; /* White text color */
+    border-radius: 50%; /* Make it circular */
+    padding: 10px; /* Padding to increase clickable area */
+    position: absolute; /* Position relative to modal-content */
+    top: 10px; /* Distance from the top of modal content */
+    right: 15px; /* Distance from the right of modal content */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition effect for hover */
+}
+
+.close:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+.progress-bar-container {
+    position: relative;
+    width: 80%;
+    height: 30px;
+    background-color: lightgray;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    position: absolute;
+    height: 100%;
+    z-index: 10; /* lower than the popup */
+    /* other styles */
+}
+
+.separator {
+    
+    z-index: 11; /* lower than the popup */
+    /* other styles */
+}
+
+#democratProgress {
+    background-color: blue;
+    width: 0;
+    left: 0;
+}
+
+#republicanProgress {
+    background-color: red;
+    width: 0;
+    right: 0;
+}
+
+.separator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-1%);
+    border-left: 2px solid black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+}
+
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 48px; /* Adjust font size as needed */
+    
+    }
+
+    #usMap {
+        width: 120vw; /* Set to 60% of the viewport width for a manageable size */
+        height: auto; /* Maintain aspect ratio */
+        margin-left: -60px;
+    }
+}
